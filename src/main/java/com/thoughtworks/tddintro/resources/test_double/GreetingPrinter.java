@@ -9,7 +9,7 @@ public class GreetingPrinter {
         this.printStream = printStream;
     }
 
-    public void printGreeting(){
+    public void printGreeting() {
         printStream.println("Greetings!");
     }
 }

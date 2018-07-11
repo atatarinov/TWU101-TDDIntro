@@ -4,8 +4,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 public class AccountTests {
-    @Test
     @Ignore  // Remove each @Ignore and implement test
+    @Test
     public void shouldIncreaseMyBalanceWhenIDepositMoney(){
         Account account = new Account();
     }
