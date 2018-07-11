@@ -18,22 +18,18 @@ public class AccountTests {
     @Test
     public void shouldIncreaseMyBalanceWhenIDepositMoney() {
         account.deposit(50);
-
         assertThat(account.balance, is(150));
     }
 
     @Test
     public void shouldDecreaseMyBalanceWhenIWithdrawMoney() {
         account.withdraw(50);
-
         assertThat(account.balance, is(50));
     }
 
     @Test
     public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal() {
         account.withdraw(101);
-
         assertThat(account.balance, is(100));
-
     }
 }
