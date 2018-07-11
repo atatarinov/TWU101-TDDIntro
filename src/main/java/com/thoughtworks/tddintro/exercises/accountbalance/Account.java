@@ -7,4 +7,8 @@ public class Account {
     public void deposit(int depositAmount) {
         balance += depositAmount;
     }
+
+    public void withdraw(int withdrawAmount) {
+        balance -= withdrawAmount;
+    }
 }
