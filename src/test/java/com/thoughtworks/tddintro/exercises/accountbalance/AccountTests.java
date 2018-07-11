@@ -1,6 +1,6 @@
 package com.thoughtworks.tddintro.exercises.accountbalance;
 
-import org.junit.Ignore;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -8,10 +8,15 @@ import static org.junit.Assert.assertThat;
 
 public class AccountTests {
 
+    private Account account;
+    @Before
+    public void setUp() throws Exception {
+        account = new Account();
+        account.balance = 100;
+    }
+
     @Test
     public void shouldIncreaseMyBalanceWhenIDepositMoney() {
-        Account account = new Account();
-        account.balance = 100;
         account.deposit(50);
 
         assertThat(account.balance, is(150));
@@ -19,8 +24,6 @@ public class AccountTests {
 
     @Test
     public void shouldDecreaseMyBalanceWhenIWithdrawMoney() {
-        Account account = new Account();
-        account.balance = 100;
         account.withdraw(50);
 
         assertThat(account.balance, is(50));
@@ -28,11 +31,9 @@ public class AccountTests {
 
     @Test
     public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal() {
-        Account account = new Account();
-        account.balance = 50;
-        account.withdraw(100);
+        account.withdraw(101);
 
-        assertThat(account.balance, is(50));
+        assertThat(account.balance, is(100));
 
     }
 }
